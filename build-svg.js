@@ -49,6 +49,11 @@ const dayBubbleWidths = {
   Sunday: 230,
 }
 
+const today = new Date()
+const todayDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
+  today
+)
+
 // Today's weather from Open-Meteo (free, no API key required)
 const url = `https://api.open-meteo.com/v1/forecast?latitude=${LATITUDE}&longitude=${LONGITUDE}&daily=temperature_2m_max,weather_code&temperature_unit=celsius&timezone=auto`
 
